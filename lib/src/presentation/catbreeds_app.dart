@@ -22,7 +22,7 @@ class CatbreedsApp extends StatelessWidget {
       translations: AppTranslations(),
       locale: Get.deviceLocale,
       fallbackLocale: const Locale('es_CO'),
-      initialRoute: Routes.home.value,
+      initialRoute: Routes.splash.value,
       getPages: pages,
       theme: initialTheme.theme,
     );

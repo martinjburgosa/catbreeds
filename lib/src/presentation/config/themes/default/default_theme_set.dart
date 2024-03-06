@@ -67,8 +67,8 @@ final ThemeData _defaultTheme = ThemeData(
       letterSpacing: 0.15,
       color: Colors.white,
     ),
-    titleMedium: GoogleFonts.montserrat(
-      fontSize: 16.0,
+    titleMedium: GoogleFonts.josefinSans(
+      fontSize: 25.0,
       fontWeight: FontWeight.w400,
       letterSpacing: 0.15,
       color: ColorSet.blackGradient87.value,
