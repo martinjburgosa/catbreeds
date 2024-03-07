@@ -21,10 +21,10 @@ GetDioBreedSearchDatasource searchBreedDatasource(
 }
 
 @riverpod
-GetDioBreedsRamdonDatasource randomBreedsDatasource(
+GetDioRamdonBreedsDatasource randomBreedsDatasource(
   RandomBreedsDatasourceRef ref,
 ) {
   final dioContext = ref.watch(dioProvider);
 
-  return GetDioBreedsRamdonDatasource(dio: dioContext);
+  return GetDioRamdonBreedsDatasource(dio: dioContext);
 }

@@ -8,12 +8,12 @@ import '../../value_app_services/breed_value_app_service.dart';
 class BreedValueAppServiceImpl implements BreedValueAppService {
   const BreedValueAppServiceImpl({
     required GetDioBreedSearchDatasource searchBreedDatasource,
-    required GetDioBreedsRamdonDatasource getRandomBreedsDatasource,
+    required GetDioRamdonBreedsDatasource getRandomBreedsDatasource,
   })  : _getRandomBreedsDatasource = getRandomBreedsDatasource,
         _searchBreedDatasource = searchBreedDatasource;
 
   final GetDioBreedSearchDatasource _searchBreedDatasource;
-  final GetDioBreedsRamdonDatasource _getRandomBreedsDatasource;
+  final GetDioRamdonBreedsDatasource _getRandomBreedsDatasource;
 
   @override
   FutureResult<List<CatInfoDto>> getCatBreedsByName(String name) async {
