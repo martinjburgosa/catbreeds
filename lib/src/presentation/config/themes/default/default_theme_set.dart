@@ -122,6 +122,7 @@ final ThemeData _defaultTheme = ThemeData(
       side: BorderSide.none,
     ),
   ),
+  scaffoldBackgroundColor: ColorSet.white.value,
   elevatedButtonTheme: ElevatedButtonThemeData(
     style: ElevatedButton.styleFrom(
       foregroundColor: Colors.white,
