@@ -18,7 +18,10 @@ class CatApiDioFactory implements DioFactory {
     return Dio(
       BaseOptions(
         baseUrl: host,
-        headers: {'x-api-key': ''},
+        headers: {
+          'x-api-key': 'bda53789-d59e-46cd-9bc4-2936630fde39',
+          'Content-Type': 'application/json',
+        },
         connectTimeout: Duration(milliseconds: connectTimeoutMillis),
         receiveTimeout: Duration(milliseconds: receiveTimeoutMillis),
         contentType: Headers.jsonContentType,
