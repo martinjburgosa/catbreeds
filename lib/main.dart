@@ -7,9 +7,14 @@ import 'src/presentation/config/themes/theme_resolver.dart';
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
-  final defaultTheme =
-      ThemeResolver(customer: 'default', themeSets: [DefaultThemeSet()])
-          .resolve();
+  final defaultTheme = ThemeResolver(
+    customer: 'default',
+    themeSets: [
+      DefaultThemeSet(),
+    ],
+  ).resolve();
 
-  runApp(CatbreedsApp(initialTheme: defaultTheme));
+  runApp(
+    CatbreedsApp(initialTheme: defaultTheme),
+  );
 }

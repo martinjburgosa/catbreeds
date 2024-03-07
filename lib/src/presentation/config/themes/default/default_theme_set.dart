@@ -18,15 +18,15 @@ class DefaultThemeSet extends ThemeSet {
         );
 }
 
-const Color _defaultRed = Color.fromRGBO(229, 9, 21, 1);
-const Color _defaultRedDark = Color.fromRGBO(125, 12, 17, 1);
+const Color _defaultPurple = Color.fromRGBO(80, 20, 152, 1);
+const Color _defaultPurpleDark = Color.fromRGBO(40, 11, 75, 1);
 const Color _greyAccent = Color(0xFF565E71);
 const Color _greyAccentLight = Color(0xFF7F868C);
 
 /// Default theme
 final ThemeData _defaultTheme = ThemeData(
-  primaryColor: _defaultRed,
-  primaryColorDark: _defaultRedDark,
+  primaryColor: _defaultPurple,
+  primaryColorDark: _defaultPurpleDark,
   colorScheme: ColorScheme.fromSwatch(accentColor: _greyAccent),
   highlightColor: Colors.white,
   indicatorColor: _greyAccentLight,
@@ -61,23 +61,23 @@ final ThemeData _defaultTheme = ThemeData(
       color: ColorSet.blackGradient60.value,
     ),
     // Text to appbar title
-    titleLarge: GoogleFonts.montserrat(
-      fontSize: 18.0,
+    titleLarge: GoogleFonts.josefinSans(
+      fontSize: 25.0,
       fontWeight: FontWeight.w500,
       letterSpacing: 0.15,
       color: Colors.white,
     ),
-    titleMedium: GoogleFonts.montserrat(
-      fontSize: 16.0,
+    titleMedium: GoogleFonts.josefinSans(
+      fontSize: 20.0,
       fontWeight: FontWeight.w400,
       letterSpacing: 0.15,
-      color: ColorSet.blackGradient87.value,
+      color: ColorSet.white.value,
     ),
-    titleSmall: GoogleFonts.montserrat(
-      fontSize: 14.0,
+    titleSmall: GoogleFonts.josefinSans(
+      fontSize: 15.0,
       fontWeight: FontWeight.w500,
       letterSpacing: 0.1,
-      color: ColorSet.blackGradient60.value,
+      color: ColorSet.white.value,
     ),
     // Text with emphasis (Titles)
     bodyLarge: GoogleFonts.montserrat(
@@ -122,6 +122,7 @@ final ThemeData _defaultTheme = ThemeData(
       side: BorderSide.none,
     ),
   ),
+  scaffoldBackgroundColor: ColorSet.white.value,
   elevatedButtonTheme: ElevatedButtonThemeData(
     style: ElevatedButton.styleFrom(
       foregroundColor: Colors.white,
@@ -134,7 +135,7 @@ final ThemeData _defaultTheme = ThemeData(
     style: ButtonStyle(
       overlayColor:
           MaterialStateProperty.all<Color?>(ColorSet.greyOpacity.value),
-      foregroundColor: MaterialStateProperty.all<Color?>(_defaultRed),
+      foregroundColor: MaterialStateProperty.all<Color?>(_defaultPurple),
     ),
   ),
   inputDecorationTheme: const InputDecorationTheme(
