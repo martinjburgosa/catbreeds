@@ -1,5 +1,5 @@
-class CatApiRequest {
-  const CatApiRequest({
+class CatApiDsRequest {
+  const CatApiDsRequest({
     this.q,
     this.limit,
     this.page,
@@ -9,7 +9,7 @@ class CatApiRequest {
   final int? limit;
   final int? page;
 
-  static Map<String, dynamic>? toJson(CatApiRequest? request) {
+  static Map<String, dynamic>? toJson(CatApiDsRequest? request) {
     if (request != null) {
       return <String, String>{
         'q': request.q ?? '',

@@ -111,6 +111,43 @@ class CatInfoDsDto extends Equatable {
       .map((e) => CatInfoDsDto.fromJson(e as Map<String, dynamic>))
       .toList();
 
+  Map<String, dynamic> toJson() {
+    return {
+      'weight': weight.toJson(),
+      'id': id,
+      'name': name,
+      'temperament': temperament,
+      'origin': origin,
+      'country_codes': countryCodes,
+      'country_code': countryCode,
+      'description': description,
+      'life_span': lifeSpan,
+      'indoor': indoor,
+      'adaptability': adaptability,
+      'affection_level': affectionLevel,
+      'child_friendly': childFriendly,
+      'dog_friendly': dogFriendly,
+      'energy_level': energyLevel,
+      'grooming': grooming,
+      'health_issues': healthIssues,
+      'intelligence': intelligence,
+      'shedding_level': sheddingLevel,
+      'social_needs': socialNeeds,
+      'stranger_friendly': strangerFriendly,
+      'vocalisation': vocalisation,
+      'experimental': experimental,
+      'hairless': hairless,
+      'natural': natural,
+      'rare': rare,
+      'rex': rex,
+      'suppressed_tail': suppressedTail,
+      'shortLegs': shortLegs,
+      'hypoallergenic': hypoallergenic,
+      'reference_image_id': referenceImageId,
+      'image_url': imageUrl,
+    };
+  }
+
   @override
   List<Object?> get props => [
         weight,
