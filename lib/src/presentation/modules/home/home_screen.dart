@@ -12,8 +12,12 @@ class HomeScreen extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
-          backgroundColor: theme.canvasColor,
-          title: Text('lbl_layout_title'.tr),
+          backgroundColor: theme.primaryColor,
+          centerTitle: true,
+          title: Text(
+            'lbl_layout_title'.tr,
+            style: theme.textTheme.titleMedium,
+          ),
         ),
         body: const Column(
           children: [

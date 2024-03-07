@@ -27,12 +27,13 @@ class SplashScreen extends StatelessWidget {
           children: [
             Text(
               'lbl_layout_title'.tr,
-              style: theme.textTheme.titleMedium,
+              style: theme.textTheme.titleLarge!
+                  .copyWith(color: theme.primaryColor),
             ),
             Padding(
               padding: EdgeInsets.only(top: screenSize.height * 0.075),
               child: CircularProgressIndicator(
-                color: ColorSet.blackGradient60.value,
+                color: theme.primaryColor,
               ),
             ),
             Padding(
