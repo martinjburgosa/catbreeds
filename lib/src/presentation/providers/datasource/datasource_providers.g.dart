@@ -39,12 +39,12 @@ final searchBreedDatasourceProvider =
 typedef SearchBreedDatasourceRef
     = AutoDisposeProviderRef<GetDioBreedSearchDatasource>;
 String _$randomBreedsDatasourceHash() =>
-    r'7ef329abba0243f67285b89861569011fdc28391';
+    r'910c088268cca5ba47c86c2bfa7c40e114b86ed5';
 
 /// See also [randomBreedsDatasource].
 @ProviderFor(randomBreedsDatasource)
 final randomBreedsDatasourceProvider =
-    AutoDisposeProvider<GetDioBreedsRamdonDatasource>.internal(
+    AutoDisposeProvider<GetDioRamdonBreedsDatasource>.internal(
   randomBreedsDatasource,
   name: r'randomBreedsDatasourceProvider',
   debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
@@ -55,6 +55,6 @@ final randomBreedsDatasourceProvider =
 );
 
 typedef RandomBreedsDatasourceRef
-    = AutoDisposeProviderRef<GetDioBreedsRamdonDatasource>;
+    = AutoDisposeProviderRef<GetDioRamdonBreedsDatasource>;
 // ignore_for_file: type=lint
 // ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member
