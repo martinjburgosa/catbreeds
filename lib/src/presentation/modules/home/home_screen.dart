@@ -5,6 +5,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../application/dtos/cat_breed_info_dto.dart';
 import 'controllers/home_controller.dart';
 import 'local_widgets/custom_card_information.dart';
+import 'local_widgets/custom_search_bar.dart';
 
 class HomeScreen extends ConsumerWidget {
   const HomeScreen({super.key});
@@ -54,21 +55,29 @@ class _HomeContent extends ConsumerWidget {
       }
     });
 
-    return ListView.builder(
-      controller: scrollController,
-      itemCount: catBreedsInfo.length + 1,
-      itemBuilder: (context, index) {
-        if (index == catBreedsInfo.length) {
-          return const Center(
-            child: CircularProgressIndicator(),
-          );
-        } else {
-          return Padding(
-            padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
-            child: CustomCardInformation(catInfo: catBreedsInfo[index]),
-          );
-        }
-      },
+    return Column(
+      children: [
+        const SizedBox(height: 100, child: CustomSearchBar()),
+        Expanded(
+          child: ListView.builder(
+            controller: scrollController,
+            itemCount: catBreedsInfo.length + 1,
+            itemBuilder: (context, index) {
+              if (index == catBreedsInfo.length) {
+                return const Center(
+                  child: CircularProgressIndicator(),
+                );
+              } else {
+                return Padding(
+                  padding:
+                      const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+                  child: CustomCardInformation(catInfo: catBreedsInfo[index]),
+                );
+              }
+            },
+          ),
+        ),
+      ],
     );
   }
 }

@@ -45,10 +45,15 @@ class CatSearchDelegate extends SearchDelegate<String> {
         final searchResult = ref.watch(searchCatsControllerProvider);
 
         if (searchResult.isNotEmpty) {
-          return ListView(
-              children: searchResult
-                  .map((cat) => CustomCardInformation(catInfo: cat))
-                  .toList());
+          return Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 30),
+            child: ListView(
+                children: searchResult
+                    .map((cat) => Padding(
+                        padding: const EdgeInsets.symmetric(vertical: 10),
+                        child: CustomCardInformation(catInfo: cat)))
+                    .toList()),
+          );
         }
 
         return const Center(child: CircularProgressIndicator());
