@@ -29,7 +29,7 @@ Map<String, dynamic>? noOpRequestEncoder<T>(T? data) {
 /// A class to describe the logic to manage an [ID] through the url of request.
 @immutable
 class PathEncoderDecoder {
-  static const _idKey = 'search?q=';
+  static const _idKey = '@';
 
   /// Returns a JSON with the provided [id].
   static Map<String, dynamic> encode<T>(T? id) {
