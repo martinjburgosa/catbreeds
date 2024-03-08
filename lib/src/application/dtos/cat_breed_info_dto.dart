@@ -3,11 +3,11 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 
 import 'weight_dto.dart';
 
-part 'cat_info_dto.g.dart';
+part 'cat_breed_info_dto.g.dart';
 
 @JsonSerializable()
-class CatInfoDto extends Equatable {
-  const CatInfoDto({
+class CatBreedInfoDto extends Equatable {
+  const CatBreedInfoDto({
     required this.weight,
     required this.id,
     required this.name,
@@ -42,8 +42,8 @@ class CatInfoDto extends Equatable {
     required this.imageUrl,
   });
 
-  factory CatInfoDto.fromJson(Map<String, dynamic> json) =>
-      _$CatInfoDtoFromJson(json);
+  factory CatBreedInfoDto.fromJson(Map<String, dynamic> json) =>
+      _$CatBreedInfoDtoFromJson(json);
 
   final WeightDto weight;
   final String id;
@@ -78,7 +78,7 @@ class CatInfoDto extends Equatable {
   final String referenceImageId;
   final String imageUrl;
 
-  Map<String, dynamic> toJson() => _$CatInfoDtoToJson(this);
+  Map<String, dynamic> toJson() => _$CatBreedInfoDtoToJson(this);
 
   @override
   List<Object?> get props => [

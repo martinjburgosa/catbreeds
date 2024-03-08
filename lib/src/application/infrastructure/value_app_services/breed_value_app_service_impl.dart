@@ -2,7 +2,7 @@ import 'dart:core';
 
 import '../../../common/types.dart';
 import '../../../datasource/cat_api.dart';
-import '../../dtos/cat_info_dto.dart';
+import '../../dtos/cat_breed_info_dto.dart';
 import '../../value_app_services/breed_value_app_service.dart';
 
 class BreedValueAppServiceImpl implements BreedValueAppService {
@@ -16,30 +16,36 @@ class BreedValueAppServiceImpl implements BreedValueAppService {
   final GetDioRamdonBreedsDatasource _getRandomBreedsDatasource;
 
   @override
-  FutureResult<List<CatInfoDto>> getCatBreedsByName(String name) async {
+  FutureResult<List<CatBreedInfoDto>> getCatBreedsByName(String name) async {
     final request = CatApiDsRequest(q: name);
 
     final result = await _searchBreedDatasource.getBreedByName(request);
 
     return result.when(
-      onValue: (list) => _parseListCatInfoDs(list),
+      onValue: (list) => ResultExt.value(_parseListCatInfoDs(list)),
       onFailure: (failure) => ResultExt.failure(failure),
     );
   }
 
   @override
-  FutureResult<List<CatInfoDto>> getRandomBreeds(int? limit) async {
-    final request = CatApiDsRequest(limit: limit);
+  FutureResult<List<CatBreedInfoDto>> getRandomBreeds(
+    int? limit,
+    int? page,
+  ) async {
+    final request = CatApiDsRequest(
+      limit: limit,
+      page: page,
+    );
 
     final result = await _getRandomBreedsDatasource.getCatBreeds(request);
 
     return result.when(
-      onValue: (list) => _parseListCatInfoDs(list),
+      onValue: (list) => ResultExt.value(_parseListCatInfoDs(list)),
       onFailure: (failure) => ResultExt.failure(failure),
     );
   }
 
-  List<CatInfoDto> _parseListCatInfoDs(List<CatInfoDsDto> dsList) {
-    return dsList.map((e) => CatInfoDto.fromJson(e.toJson())).toList();
+  List<CatBreedInfoDto> _parseListCatInfoDs(List<CatBreedInfoDsDto> dsList) {
+    return dsList.map((e) => CatBreedInfoDto.fromJson(e.toJson())).toList();
   }
 }

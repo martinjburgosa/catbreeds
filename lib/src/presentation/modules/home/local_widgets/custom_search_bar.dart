@@ -1,60 +1,32 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../../../common/values/color_set.dart';
+import '../delegates/search_cats_delegate.dart';
 
-class CustomSearchBar extends StatefulWidget {
+class CustomSearchBar extends ConsumerWidget {
   const CustomSearchBar({super.key});
 
   @override
-  State<CustomSearchBar> createState() => _CustomSearchBarState();
-}
-
-class _CustomSearchBarState extends State<CustomSearchBar> {
-  @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     final theme = Theme.of(context);
     return Padding(
       padding: const EdgeInsets.symmetric(
         horizontal: 30,
         vertical: 30,
       ),
-      child: SearchAnchor(
-          builder: (BuildContext context, SearchController controller) {
-        return SearchBar(
-          shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-            RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(15),
-            ),
-          ),
-          hintStyle: MaterialStateProperty.all(theme.textTheme.labelSmall),
-          hintText: 'Search cat by breed',
-          backgroundColor: MaterialStatePropertyAll(ColorSet.white.value),
-          controller: controller,
-          padding: const MaterialStatePropertyAll<EdgeInsets>(
-            EdgeInsets.symmetric(horizontal: 10),
-          ),
-          onTap: () {
-            controller.openView();
-          },
-          onChanged: (_) {
-            controller.openView();
-          },
-          trailing: const <Widget>[Icon(Icons.search)],
-        );
-      }, suggestionsBuilder:
-              (BuildContext context, SearchController controller) {
-        return List<ListTile>.generate(5, (int index) {
-          final String item = 'item $index';
-          return ListTile(
-            title: Text(item),
-            onTap: () {
-              setState(() {
-                controller.closeView(item);
-              });
-            },
+      child: TextField(
+        onTap: () {
+          showSearch(
+            context: context,
+            delegate: CatSearchDelegate(theme, ref),
+            query: '',
           );
-        });
-      }),
+        },
+        decoration: const InputDecoration(
+          labelText: 'lbl',
+          suffixIcon: Icon(Icons.search),
+        ),
+      ),
     );
   }
 }

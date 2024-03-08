@@ -1,7 +1,7 @@
 import '../../common/types.dart';
-import '../dtos/cat_info_dto.dart';
+import '../dtos/cat_breed_info_dto.dart';
 
 abstract class BreedValueAppService {
-  FutureResult<List<CatInfoDto>> getRandomBreeds(int? limit);
-  FutureResult<List<CatInfoDto>> getCatBreedsByName(String name);
+  FutureResult<List<CatBreedInfoDto>> getRandomBreeds(int? limit, int? page);
+  FutureResult<List<CatBreedInfoDto>> getCatBreedsByName(String name);
 }

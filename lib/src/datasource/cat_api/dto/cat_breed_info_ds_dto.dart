@@ -4,42 +4,43 @@ import 'weight_ds_dto.dart';
 
 const String _imageUrl = 'https://cdn2.thecatapi.com/images/';
 
-class CatInfoDsDto extends Equatable {
-  factory CatInfoDsDto.fromJson(Map<String, dynamic> map) => CatInfoDsDto(
-      weight: WeightDsDto.fromJson(map['weight'] as Map<String, dynamic>),
-      id: map['id'] as String,
-      name: map['name'] as String,
-      temperament: map['temperament'] as String,
-      origin: map['origin'] as String,
-      countryCodes: map['country_codes'] as String,
-      countryCode: map['country_code'] as String,
-      description: map['description'] as String,
-      lifeSpan: map['life_span'] as String,
-      indoor: int.parse(map['indoor'].toString()),
-      adaptability: int.parse(map['adaptability'].toString()),
-      affectionLevel: int.parse(map['affection_level'].toString()),
-      childFriendly: int.parse(map['child_friendly'].toString()),
-      dogFriendly: int.parse(map['dog_friendly'].toString()),
-      energyLevel: int.parse(map['energy_level'].toString()),
-      grooming: int.parse(map['grooming'].toString()),
-      healthIssues: int.parse(map['health_issues'].toString()),
-      intelligence: int.parse(map['intelligence'].toString()),
-      sheddingLevel: int.parse(map['shedding_level'].toString()),
-      socialNeeds: int.parse(map['social_needs'].toString()),
-      strangerFriendly: int.parse(map['stranger_friendly'].toString()),
-      vocalisation: int.parse(map['vocalisation'].toString()),
-      experimental: int.parse(map['experimental'].toString()),
-      hairless: int.parse(map['hairless'].toString()),
-      natural: int.parse(map['natural'].toString()),
-      rare: int.parse(map['rare'].toString()),
-      rex: int.parse(map['rex'].toString()),
-      suppressedTail: int.parse(map['suppressed_tail'].toString()),
-      shortLegs: int.parse(map['short_legs'].toString()),
-      hypoallergenic: int.parse(map['hypoallergenic'].toString()),
-      referenceImageId: map['referenceImageId'].toString(),
-      imageUrl: '$_imageUrl${map['reference_image_id'].toString()}.jpg');
+class CatBreedInfoDsDto extends Equatable {
+  factory CatBreedInfoDsDto.fromJson(Map<String, dynamic> map) =>
+      CatBreedInfoDsDto(
+          weight: WeightDsDto.fromJson(map['weight'] as Map<String, dynamic>),
+          id: map['id'] as String,
+          name: map['name'] as String,
+          temperament: map['temperament'] as String,
+          origin: map['origin'] as String,
+          countryCodes: map['country_codes'] as String,
+          countryCode: map['country_code'] as String,
+          description: map['description'] as String,
+          lifeSpan: map['life_span'] as String,
+          indoor: int.parse(map['indoor'].toString()),
+          adaptability: int.parse(map['adaptability'].toString()),
+          affectionLevel: int.parse(map['affection_level'].toString()),
+          childFriendly: int.parse(map['child_friendly'].toString()),
+          dogFriendly: int.parse(map['dog_friendly'].toString()),
+          energyLevel: int.parse(map['energy_level'].toString()),
+          grooming: int.parse(map['grooming'].toString()),
+          healthIssues: int.parse(map['health_issues'].toString()),
+          intelligence: int.parse(map['intelligence'].toString()),
+          sheddingLevel: int.parse(map['shedding_level'].toString()),
+          socialNeeds: int.parse(map['social_needs'].toString()),
+          strangerFriendly: int.parse(map['stranger_friendly'].toString()),
+          vocalisation: int.parse(map['vocalisation'].toString()),
+          experimental: int.parse(map['experimental'].toString()),
+          hairless: int.parse(map['hairless'].toString()),
+          natural: int.parse(map['natural'].toString()),
+          rare: int.parse(map['rare'].toString()),
+          rex: int.parse(map['rex'].toString()),
+          suppressedTail: int.parse(map['suppressed_tail'].toString()),
+          shortLegs: int.parse(map['short_legs'].toString()),
+          hypoallergenic: int.parse(map['hypoallergenic'].toString()),
+          referenceImageId: map['referenceImageId'].toString(),
+          imageUrl: '$_imageUrl${map['reference_image_id'].toString()}.jpg');
 
-  const CatInfoDsDto({
+  const CatBreedInfoDsDto({
     required this.weight,
     required this.id,
     required this.name,
@@ -107,8 +108,8 @@ class CatInfoDsDto extends Equatable {
   final String referenceImageId;
   final String imageUrl;
 
-  static List<CatInfoDsDto> listFromJson(List<dynamic> json) => json
-      .map((e) => CatInfoDsDto.fromJson(e as Map<String, dynamic>))
+  static List<CatBreedInfoDsDto> listFromJson(List<dynamic> json) => json
+      .map((e) => CatBreedInfoDsDto.fromJson(e as Map<String, dynamic>))
       .toList();
 
   Map<String, dynamic> toJson() {
@@ -118,33 +119,33 @@ class CatInfoDsDto extends Equatable {
       'name': name,
       'temperament': temperament,
       'origin': origin,
-      'country_codes': countryCodes,
-      'country_code': countryCode,
+      'countryCodes': countryCodes,
+      'countryCode': countryCode,
       'description': description,
-      'life_span': lifeSpan,
+      'lifeSpan': lifeSpan,
       'indoor': indoor,
       'adaptability': adaptability,
-      'affection_level': affectionLevel,
-      'child_friendly': childFriendly,
-      'dog_friendly': dogFriendly,
-      'energy_level': energyLevel,
+      'affectionLevel': affectionLevel,
+      'childFriendly': childFriendly,
+      'dogFriendly': dogFriendly,
+      'energyLevel': energyLevel,
       'grooming': grooming,
-      'health_issues': healthIssues,
+      'healthIssues': healthIssues,
       'intelligence': intelligence,
-      'shedding_level': sheddingLevel,
-      'social_needs': socialNeeds,
-      'stranger_friendly': strangerFriendly,
+      'sheddingLevel': sheddingLevel,
+      'socialNeeds': socialNeeds,
+      'strangerFriendly': strangerFriendly,
       'vocalisation': vocalisation,
       'experimental': experimental,
       'hairless': hairless,
       'natural': natural,
       'rare': rare,
       'rex': rex,
-      'suppressed_tail': suppressedTail,
+      'suppressedTail': suppressedTail,
       'shortLegs': shortLegs,
       'hypoallergenic': hypoallergenic,
-      'reference_image_id': referenceImageId,
-      'image_url': imageUrl,
+      'referenceImageId': referenceImageId,
+      'imageUrl': imageUrl,
     };
   }
 
