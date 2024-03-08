@@ -11,9 +11,6 @@ class CatInfoDto extends Equatable {
     required this.weight,
     required this.id,
     required this.name,
-    required this.cfaUrl,
-    required this.vetstreetUrl,
-    required this.vcahospitalsUrl,
     required this.temperament,
     required this.origin,
     required this.countryCodes,
@@ -21,8 +18,6 @@ class CatInfoDto extends Equatable {
     required this.description,
     required this.lifeSpan,
     required this.indoor,
-    required this.lap,
-    required this.altNames,
     required this.adaptability,
     required this.affectionLevel,
     required this.childFriendly,
@@ -42,7 +37,6 @@ class CatInfoDto extends Equatable {
     required this.rex,
     required this.suppressedTail,
     required this.shortLegs,
-    required this.wikipediaUrl,
     required this.hypoallergenic,
     required this.referenceImageId,
     required this.imageUrl,
@@ -54,9 +48,6 @@ class CatInfoDto extends Equatable {
   final WeightDto weight;
   final String id;
   final String name;
-  final String cfaUrl;
-  final String vetstreetUrl;
-  final String vcahospitalsUrl;
   final String temperament;
   final String origin;
   final String countryCodes;
@@ -64,8 +55,6 @@ class CatInfoDto extends Equatable {
   final String description;
   final String lifeSpan;
   final int indoor;
-  final int lap;
-  final String altNames;
   final int adaptability;
   final int affectionLevel;
   final int childFriendly;
@@ -85,7 +74,6 @@ class CatInfoDto extends Equatable {
   final int rex;
   final int suppressedTail;
   final int shortLegs;
-  final String wikipediaUrl;
   final int hypoallergenic;
   final String referenceImageId;
   final String imageUrl;
@@ -96,10 +84,7 @@ class CatInfoDto extends Equatable {
   List<Object?> get props => [
         id,
         name,
-        cfaUrl,
         imageUrl,
-        vetstreetUrl,
-        vcahospitalsUrl,
         temperament,
         origin,
         countryCodes,
@@ -107,8 +92,6 @@ class CatInfoDto extends Equatable {
         description,
         lifeSpan,
         indoor,
-        lap,
-        altNames,
         adaptability,
         affectionLevel,
         childFriendly,
@@ -128,7 +111,6 @@ class CatInfoDto extends Equatable {
         rex,
         suppressedTail,
         shortLegs,
-        wikipediaUrl,
         hypoallergenic,
         referenceImageId,
       ];
