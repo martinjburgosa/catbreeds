@@ -2,19 +2,20 @@ import '../../../../common/types.dart';
 import '../../../common/sources/dio/dio_source.dart';
 import '../../common/cat_api_path.dart';
 import '../../dto/cat_api_ds_request.dart';
-import '../../dto/cat_info_ds_dto.dart';
+import '../../dto/cat_breed_info_ds_dto.dart';
 
 class GetDioRamdonBreedsDatasource
-    extends GetDio<CatApiDsRequest, List<CatInfoDsDto>> {
+    extends GetDio<CatApiDsRequest, List<CatBreedInfoDsDto>> {
   GetDioRamdonBreedsDatasource({
     required super.dio,
   }) : super.expectingJsonArray(
           path: DioPath(CatApiPath.breeds),
-          resultDecoder: CatInfoDsDto.listFromJson,
+          resultDecoder: CatBreedInfoDsDto.listFromJson,
           requestEncoder: CatApiDsRequest.toJson,
         );
 
-  FutureResult<List<CatInfoDsDto>?> getCatBreeds(CatApiDsRequest? request) {
+  FutureResult<List<CatBreedInfoDsDto>?> getCatBreeds(
+      CatApiDsRequest? request) {
     return get(request);
   }
 }

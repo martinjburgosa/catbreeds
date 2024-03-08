@@ -1,12 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'cat_info_dto.dart';
+part of 'cat_breed_info_dto.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-CatInfoDto _$CatInfoDtoFromJson(Map<String, dynamic> json) => CatInfoDto(
+CatBreedInfoDto _$CatBreedInfoDtoFromJson(Map<String, dynamic> json) =>
+    CatBreedInfoDto(
       weight: WeightDto.fromJson(json['weight'] as Map<String, dynamic>),
       id: json['id'] as String,
       name: json['name'] as String,
@@ -41,7 +42,7 @@ CatInfoDto _$CatInfoDtoFromJson(Map<String, dynamic> json) => CatInfoDto(
       imageUrl: json['imageUrl'] as String,
     );
 
-Map<String, dynamic> _$CatInfoDtoToJson(CatInfoDto instance) =>
+Map<String, dynamic> _$CatBreedInfoDtoToJson(CatBreedInfoDto instance) =>
     <String, dynamic>{
       'weight': instance.weight,
       'id': instance.id,
