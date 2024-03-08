@@ -2,6 +2,7 @@
 const Map<String, String> esEs = {
   'lbl_layout_title': 'Catbreeds App',
   'lbl_home_card_more': 'Más',
+  'lbl_search_hint': 'Buscar raza de gato',
   'lbl_detail_description': 'Descripción',
   'lbl_detail_origin_country': 'País de origen',
   'lbl_detail_life_span': 'Promedio de vida',
