@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'src/presentation/catbreeds_app.dart';
 import 'src/presentation/config/themes/default/default_theme_set.dart';
@@ -15,6 +16,8 @@ Future<void> main() async {
   ).resolve();
 
   runApp(
-    CatbreedsApp(initialTheme: defaultTheme),
+    ProviderScope(
+      child: CatbreedsApp(initialTheme: defaultTheme),
+    ),
   );
 }

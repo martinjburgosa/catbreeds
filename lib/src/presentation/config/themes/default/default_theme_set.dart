@@ -18,7 +18,7 @@ class DefaultThemeSet extends ThemeSet {
         );
 }
 
-const Color _defaultPurple = Color.fromRGBO(80, 20, 152, 1);
+const Color _defaultPurple = Color(0xFF501498);
 const Color _defaultPurpleDark = Color.fromRGBO(40, 11, 75, 1);
 const Color _greyAccent = Color(0xFF565E71);
 const Color _greyAccentLight = Color(0xFF7F868C);
@@ -49,13 +49,13 @@ final ThemeData _defaultTheme = ThemeData(
       color: ColorSet.blackGradient60.value,
     ),
     headlineMedium: GoogleFonts.montserrat(
-      fontSize: 34.0,
+      fontSize: 24.0,
       fontWeight: FontWeight.w400,
       letterSpacing: 0.25,
-      color: ColorSet.blackGradient90.value,
+      color: Colors.black,
     ),
-    headlineSmall: GoogleFonts.montserrat(
-      fontSize: 24.0,
+    headlineSmall: GoogleFonts.josefinSans(
+      fontSize: 18.0,
       fontWeight: FontWeight.w400,
       letterSpacing: 0.0,
       color: ColorSet.blackGradient60.value,
@@ -138,14 +138,17 @@ final ThemeData _defaultTheme = ThemeData(
       foregroundColor: MaterialStateProperty.all<Color?>(_defaultPurple),
     ),
   ),
-  inputDecorationTheme: const InputDecorationTheme(
+  inputDecorationTheme: InputDecorationTheme(
+    labelStyle: TextStyle(
+      color: ColorSet.blackGradient60.value,
+    ),
     focusColor: _greyAccent,
-    focusedBorder: UnderlineInputBorder(
+    focusedBorder: const UnderlineInputBorder(
       borderSide: BorderSide(
         color: _greyAccent,
       ),
     ),
-    border: UnderlineInputBorder(
+    border: const UnderlineInputBorder(
       borderSide: BorderSide(
         color: _greyAccent,
       ),
