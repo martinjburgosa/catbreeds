@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:get/get.dart';
 
 import '../delegates/search_cats_delegate.dart';
 
@@ -22,9 +23,12 @@ class CustomSearchBar extends ConsumerWidget {
             query: '',
           );
         },
-        decoration: const InputDecoration(
-          labelText: 'lbl',
-          suffixIcon: Icon(Icons.search),
+        decoration: InputDecoration(
+          labelText: 'lbl_search_hint'.tr,
+          suffixIcon: Icon(
+            Icons.search,
+            color: Theme.of(context).primaryColor,
+          ),
         ),
       ),
     );
