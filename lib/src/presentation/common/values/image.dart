@@ -1,5 +1,6 @@
 enum PngImage {
-  checkIcon('assets/img/check_icon.png');
+  dogHandFill('assets/img/dog_hand_fill.png'),
+  dogHandEmpty('assets/img/dog_hand_empty.png');
 
   const PngImage(this.value);
 
