@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import '../controllers/detail_controller.dart';
 import '../controllers/home_controller.dart';
 import '../controllers/search_controller.dart';
 import '../local_widgets/custom_card_information.dart';
@@ -47,15 +48,25 @@ class CatSearchDelegate extends SearchDelegate<String> {
         final searchResult = ref.watch(searchCatsControllerProvider);
 
         if (searchResult.isNotEmpty) {
-          return Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 30),
-            child: ListView(
-                children: searchResult
-                    .map((cat) => Padding(
-                        padding: const EdgeInsets.symmetric(vertical: 10),
-                        child: CustomCardInformation(catBreedInfo: cat)))
-                    .toList()),
-          );
+          return ListView(
+              children: searchResult
+                  .map(
+                    (cat) => Padding(
+                      padding: const EdgeInsets.symmetric(vertical: 10),
+                      child: ListTile(
+                          onTap: () => ref
+                              .read(detailControllerProvider.notifier)
+                              .setCatInfoToDetailView(cat),
+                          title: Text(
+                            cat.name,
+                            style: theme.textTheme.headlineMedium,
+                          ),
+                          leading: CircleAvatar(
+                            backgroundImage: NetworkImage(cat.imageUrl),
+                          )),
+                    ),
+                  )
+                  .toList());
         }
 
         return const Center(child: CircularProgressIndicator());

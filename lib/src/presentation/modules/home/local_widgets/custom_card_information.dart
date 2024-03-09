@@ -30,70 +30,75 @@ class CustomCardInformation extends ConsumerWidget {
         elevation: 4,
         child: Padding(
           padding: const EdgeInsets.all(15.0),
-          child: SizedBox(
-            height: screenSize.height * 0.5,
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      catBreedInfo.name,
-                      style: theme.textTheme.headlineMedium,
-                    ),
-                    Text(
-                      'lbl_home_card_more'.tr,
-                      style: headLineSmall,
-                    ),
-                  ],
-                ),
-                ClipRRect(
-                  borderRadius: const BorderRadius.only(
-                    topLeft: circularRadius,
-                    bottomRight: circularRadius,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    catBreedInfo.name,
+                    style: theme.textTheme.headlineMedium,
                   ),
-                  child: CachedNetworkImage(
-                    width: screenSize.width * 0.75,
-                    height: screenSize.height * 0.3,
-                    fit: BoxFit.cover,
-                    imageUrl: catBreedInfo.imageUrl,
-                    progressIndicatorBuilder:
-                        (context, url, downloadProgress) => SizedBox(
+                  Text(
+                    'lbl_home_card_more'.tr,
+                    style: headLineSmall.copyWith(
+                      color: theme.primaryColor,
+                    ),
+                  )
+                ],
+              ),
+              Expanded(
+                child: Padding(
+                  padding:
+                      EdgeInsets.symmetric(vertical: screenSize.height * 0.02),
+                  child: ClipRRect(
+                    borderRadius: const BorderRadius.only(
+                      topLeft: circularRadius,
+                      bottomRight: circularRadius,
+                    ),
+                    child: CachedNetworkImage(
                       width: screenSize.width * 0.75,
                       height: screenSize.height * 0.3,
-                      child: CircularProgressIndicator(
-                        color: theme.primaryColor,
-                        value: downloadProgress.progress,
+                      fit: BoxFit.cover,
+                      imageUrl: catBreedInfo.imageUrl,
+                      progressIndicatorBuilder:
+                          (context, url, downloadProgress) => SizedBox(
+                        width: screenSize.width * 0.75,
+                        height: screenSize.height * 0.3,
+                        child: CircularProgressIndicator(
+                          color: theme.primaryColor,
+                          value: downloadProgress.progress,
+                        ),
                       ),
-                    ),
-                    errorWidget: (context, url, error) => const Icon(
-                      Icons.error,
-                      size: 100,
-                      color: Colors.red,
+                      errorWidget: (context, url, error) => const Icon(
+                        Icons.error,
+                        size: 100,
+                        color: Colors.red,
+                      ),
                     ),
                   ),
                 ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      catBreedInfo.origin,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    catBreedInfo.origin,
+                    style: headLineSmall,
+                  ),
+                  SizedBox(
+                    width: 140,
+                    child: Text(
+                      catBreedInfo.temperament,
+                      overflow: TextOverflow.ellipsis,
+                      softWrap: true,
                       style: headLineSmall,
                     ),
-                    SizedBox(
-                      width: 140,
-                      child: Text(
-                        catBreedInfo.temperament,
-                        overflow: TextOverflow.ellipsis,
-                        softWrap: true,
-                        style: headLineSmall,
-                      ),
-                    ),
-                  ],
-                ),
-              ],
-            ),
+                  ),
+                ],
+              ),
+            ],
           ),
         ),
       ),
