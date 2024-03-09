@@ -8,11 +8,11 @@ import '../controllers/detail_controller.dart';
 
 class CustomCardInformation extends ConsumerWidget {
   const CustomCardInformation({
-    required this.catInfo,
+    required this.catBreedInfo,
     super.key,
   });
 
-  final CatBreedInfoDto catInfo;
+  final CatBreedInfoDto catBreedInfo;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -24,7 +24,7 @@ class CustomCardInformation extends ConsumerWidget {
     return InkWell(
       onTap: () => ref
           .read(detailControllerProvider.notifier)
-          .setCatInfoToDetailView(catInfo),
+          .setCatInfoToDetailView(catBreedInfo),
       child: Card(
         color: Colors.deepPurple[50],
         elevation: 4,
@@ -39,7 +39,7 @@ class CustomCardInformation extends ConsumerWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
-                      catInfo.name,
+                      catBreedInfo.name,
                       style: theme.textTheme.headlineMedium,
                     ),
                     Text(
@@ -57,7 +57,7 @@ class CustomCardInformation extends ConsumerWidget {
                     width: screenSize.width * 0.75,
                     height: screenSize.height * 0.3,
                     fit: BoxFit.cover,
-                    imageUrl: catInfo.imageUrl,
+                    imageUrl: catBreedInfo.imageUrl,
                     progressIndicatorBuilder:
                         (context, url, downloadProgress) => SizedBox(
                       width: screenSize.width * 0.75,
@@ -78,13 +78,13 @@ class CustomCardInformation extends ConsumerWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
-                      catInfo.origin,
+                      catBreedInfo.origin,
                       style: headLineSmall,
                     ),
                     SizedBox(
                       width: 140,
                       child: Text(
-                        catInfo.temperament,
+                        catBreedInfo.temperament,
                         overflow: TextOverflow.ellipsis,
                         softWrap: true,
                         style: headLineSmall,

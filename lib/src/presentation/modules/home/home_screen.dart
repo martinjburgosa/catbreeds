@@ -71,7 +71,8 @@ class _HomeContent extends ConsumerWidget {
                 return Padding(
                   padding:
                       const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
-                  child: CustomCardInformation(catInfo: catBreedsInfo[index]),
+                  child:
+                      CustomCardInformation(catBreedInfo: catBreedsInfo[index]),
                 );
               }
             },

@@ -6,8 +6,10 @@ import '../controllers/search_controller.dart';
 import '../local_widgets/custom_card_information.dart';
 
 class CatSearchDelegate extends SearchDelegate<String> {
-  CatSearchDelegate(this.theme, this.ref)
-      : super(
+  CatSearchDelegate(
+    this.theme,
+    this.ref,
+  ) : super(
           searchFieldStyle: theme.textTheme.headlineSmall,
         );
 
@@ -51,7 +53,7 @@ class CatSearchDelegate extends SearchDelegate<String> {
                 children: searchResult
                     .map((cat) => Padding(
                         padding: const EdgeInsets.symmetric(vertical: 10),
-                        child: CustomCardInformation(catInfo: cat)))
+                        child: CustomCardInformation(catBreedInfo: cat)))
                     .toList()),
           );
         }
