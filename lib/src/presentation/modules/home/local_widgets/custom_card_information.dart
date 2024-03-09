@@ -1,5 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:get/get.dart';
 
@@ -87,13 +89,15 @@ class CustomCardInformation extends ConsumerWidget {
                     catBreedInfo.origin,
                     style: headLineSmall,
                   ),
-                  SizedBox(
-                    width: 140,
+                  SizedBox(width: screenSize.width * 0.035),
+                  Flexible(
                     child: Text(
                       catBreedInfo.temperament,
                       overflow: TextOverflow.ellipsis,
                       softWrap: true,
-                      style: headLineSmall,
+                      style: headLineSmall.copyWith(
+                        color: theme.primaryColor,
+                      ),
                     ),
                   ),
                 ],
