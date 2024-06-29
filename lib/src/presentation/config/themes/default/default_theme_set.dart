@@ -134,8 +134,8 @@ final ThemeData _defaultTheme = ThemeData(
   textButtonTheme: TextButtonThemeData(
     style: ButtonStyle(
       overlayColor:
-          MaterialStateProperty.all<Color?>(ColorSet.greyOpacity.value),
-      foregroundColor: MaterialStateProperty.all<Color?>(_defaultPurple),
+          WidgetStateProperty.all<Color?>(ColorSet.greyOpacity.value),
+      foregroundColor: WidgetStateProperty.all<Color?>(_defaultPurple),
     ),
   ),
   inputDecorationTheme: InputDecorationTheme(

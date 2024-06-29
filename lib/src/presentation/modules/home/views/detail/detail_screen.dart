@@ -1,11 +1,9 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:get/get.dart';
 
 import '../../../../../application/dtos/cat_breed_info_dto.dart';
-import '../../../../common/values/image.dart';
 import '../../controllers/detail_controller.dart';
 import 'local_widgets/level_indicator.dart';
 

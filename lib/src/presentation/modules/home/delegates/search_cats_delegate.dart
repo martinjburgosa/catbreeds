@@ -4,7 +4,6 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../controllers/detail_controller.dart';
 import '../controllers/home_controller.dart';
 import '../controllers/search_controller.dart';
-import '../local_widgets/custom_card_information.dart';
 
 class CatSearchDelegate extends SearchDelegate<String> {
   CatSearchDelegate(
